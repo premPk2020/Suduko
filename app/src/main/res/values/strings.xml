@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sudoku</string>
+    <string name="easy">Easy</string>
+    <string name="hard">Medium</string>
+    <string name="medium">Hard</string>
+
 </resources>
