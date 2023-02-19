@@ -4,7 +4,7 @@ import com.orange.sudoku.domain.*
 
 class GameRepositoryImpl(
     private val gameStorage:IGameDataStorage,
-    private val settingsStorage:ISettingStorage
+    private val settingsStorage: LocalSettingsStorageImpl
 ) :IGameRepository{
     override suspend fun saveGame(
         elapsedTime: Long,
@@ -114,6 +114,10 @@ class GameRepositoryImpl(
             is SettingsStorageResult.OnError -> onError(getSettingsResult.exception)
             is SettingsStorageResult.OnSuccess -> onSuccess(getSettingsResult.settings)
         }
+    }
+
+    override suspend fun updateSettings(onSuccess: (Unit) -> Unit, onError: (Exception) -> Unit) {
+        TODO("Not yet implemented")
     }
 
     override suspend fun updateSettings(settings:Settings, onSuccess: (Unit) -> Unit, onError: (Exception) -> Unit) {

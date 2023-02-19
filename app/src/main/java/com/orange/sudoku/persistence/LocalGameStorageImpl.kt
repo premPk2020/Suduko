@@ -14,7 +14,7 @@ import java.io.ObjectOutputStream
 
 private const val FILE_NAME = "game_state.txt"
 class LocalGameStorageImpl(
-    fileStorageDirectory:String,
+    fileStorageDirectory: String,
     private val pathToStorageFile:File = File(fileStorageDirectory, FILE_NAME)
 ): IGameDataStorage {
     override suspend fun updateGame(game: SudokuPuzzle): GameStorageResult = withContext(Dispatchers.IO){
